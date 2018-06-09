@@ -1,5 +1,5 @@
 {
-  "name": "vue-maps",
+  "name": "mapvibe",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Renan Rodrigues <renanbet@hotmail.com>",
@@ -14,9 +14,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3",
     "vue": "^2.5.2",
+    "vue-axios": "^2.1.1",
     "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.1",
     "vue2-google-maps": "^0.9.7"
@@ -75,6 +76,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "sass-loader": "^6.0.6",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
