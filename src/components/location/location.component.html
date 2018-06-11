@@ -1,0 +1,38 @@
+
+<div class="location">
+  <div class="centered-container">
+    <md-content class="md-elevation-3">
+      <h1 class="title">Location</h1>
+      <form novalidate class="md-layout form">
+        <md-field>
+          <label>Name</label>
+          <md-input v-model="name"></md-input>
+        </md-field>
+        <md-field>
+          <label>Resume</label>
+          <md-input v-model="resume"></md-input>
+        </md-field>
+        <md-field>
+          <label>Street</label>
+          <md-input v-model="street"></md-input>
+        </md-field>
+        <md-field>
+          <label>Latitude</label>
+          <md-input v-model="lat"></md-input>
+        </md-field>
+        <md-field>
+          <label>Longitude</label>
+          <md-input v-model="lng"></md-input>
+        </md-field>
+        <div>
+          <md-button v-on:click="send" class="md-raised md-primary">Save</md-button>
+        </div>
+      </form>
+      <div class="loading-overlay" v-if="loading">
+        <md-progress-spinner md-mode="indeterminate" :md-stroke="2"></md-progress-spinner>
+      </div>
+    </md-content>
+  </div>
+  <locations></locations>
+</div>
+

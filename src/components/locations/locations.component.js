@@ -1,13 +1,12 @@
 import LocationService from '../../shared/services/locations.service'
 
 export default {
+  name: 'locations',
   components: {},
   props: [],
   data () {
     return {
-      center: {lat: -27.605275, lng: -48.466823},
-      zoom: 14,
-      markers: []
+      locations: []
     }
   },
   computed: {
@@ -16,13 +15,7 @@ export default {
   async mounted () {
     let locationService = new LocationService();
     await locationService.get().then(res => {
-      res.data.forEach(item => {
-        this.markers.push({position: {
-          lat: item.lat,
-          lng: item.lng
-          }
-        })
-      })
+      this.locations = res.data;
     })
   },
   methods: {
