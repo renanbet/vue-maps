@@ -18,6 +18,8 @@ export default {
     })
   },
   methods: {
-
+    setPosition: function(location) {
+      let position = {lat: location.lat, lng: location.lng}
+    }
   }
 }

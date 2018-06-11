@@ -3,14 +3,14 @@
   <GmapMap
     v-bind:center="center"
     v-bind:zoom="zoom"
-    style="height: 500px"
+    style="height: 400px"
     >
     <GmapMarker
       v-bind:key="index"
       v-for="(m, index) in markers"
       v-bind:position="m.position"
       v-bind:clickable="true"
-      @click="center=m.position"
+      @click="showLocation(m)"
     />
   </GmapMap>
 </section>
