@@ -33,6 +33,7 @@
       </div>
     </md-content>
   </div>
-  <locations></locations>
+
+  <grid :items="locations" :headers="headers" :changePage="changePage" :total="total" :page="page" :size="size"></grid>
 </div>
 

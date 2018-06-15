@@ -1,4 +1,4 @@
-import navbar from './components/navbar/index.vue'
+import navbar from './components/layout/navbar/index.vue'
 
 export default {
   components: {

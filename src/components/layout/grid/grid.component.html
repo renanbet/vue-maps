@@ -1,0 +1,37 @@
+<section class="grid">
+  <md-table>
+    <md-table-row>
+      <template v-if="headers.length">
+        <slot v-for="(header, index) in headers" :name="'header'+index">
+          <md-table-head>
+            <div class="head">
+              {{header}}
+            </div>
+          </md-table-head>
+        </slot>
+      </template>
+      <slot name="headers" v-else></slot>
+    </md-table-row>
+
+    <template v-if="items.length">
+      <md-table-row v-for="(item, rowIndex) in items" :key="rowIndex">
+        <slot v-for="(value, colIndex) in item" :name="'row'+rowIndex+colIndex">
+          <md-table-cell>
+            {{value}}
+          </md-table-cell>
+        </slot>
+        <slot v-if="hasEditable">
+          <md-table-cell>
+            <md-button class="md-icon-button md-list-action">
+              <md-icon class="md-primary">edit</md-icon>
+            </md-button>
+          </md-table-cell>
+        </slot>
+      </md-table-row>
+    </template>
+
+    <slot name="content" v-else></slot>
+  </md-table>
+
+  <pagination v-if="hasPagination && total" v-on:changePage="changePage" :size="size" :page="page" :total="total"></pagination>
+</section>

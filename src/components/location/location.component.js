@@ -1,9 +1,9 @@
 import LocationService from '../../shared/services/locations.service'
-import locations from '../locations/index.vue'
+import grid from '../layout/grid/index.vue'
 
 export default {
   components: {
-    'locations': locations
+    grid
   },
   props: [],
   data () {
@@ -13,18 +13,39 @@ export default {
       street: '',
       lat: '',
       lng: '',
-      loading: false
+      loading: false,
+      locations: [],
+      headers: [
+      'ID',
+      'Name',
+      'Resume',
+      'Street',
+      'Latitude',
+      'Longitude',
+      ''
+      ],
+      size: 0,
+      page: 1,
+      total: 0,
+      locationService: Object
     }
   },
   computed: {
 
   },
-  mounted () {
-
+  async mounted () {
+    this.getLocations();
   },
   methods: {
-    send: function() {
-      let locationService = new LocationService();
+    async getLocations() {
+      this.locationService = LocationService.getInstance();
+      await this.locationService.get().then(res => {
+        this.locations = res.data
+        this.size = this.locations.length
+        this.total = this.locations.length
+      })
+    },
+    send() {
       let location = {
         name: this.name,
         resume: this.resume,
@@ -32,10 +53,12 @@ export default {
         lat: this.lat,
         lng: this.lng
       }
-      locationService.post(location).then(res => {
-        console.log(res);
+      this.locationService.post(location).then(res => {
+        this.getLocations();
       })
-
-    }
+    },
+    changePage(currentPage) {
+      this.page = currentPage;
+    },
   }
 }

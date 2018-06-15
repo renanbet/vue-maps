@@ -1,0 +1,14 @@
+#app {
+  .container {
+    width: 90%;
+    margin: 10px auto 5px auto;
+    color: #757575;
+  }
+
+  @media (min-width: 1200px){
+    .container {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.grid {
+  .md-table
+  {
+    width: 100%;
+    border-spacing: 0;
+
+    .md-table-content {
+      .md-table-row {
+        font-size: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+        height: 100px;
+      }
+    }
+
+    .md-table-cell {
+      white-space: pre-line;
+    }
+  }
+
+}

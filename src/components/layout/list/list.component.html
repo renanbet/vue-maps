@@ -1,18 +1,16 @@
 
 <section class="list">
   <md-list class="md-triple-line">
-    <md-list-item v-for="item in locations" :key="item.name">
+    <md-list-item v-for="(item, rowIndex) in items" :key="rowIndex" @click="setPosition(item)">
       <div class="md-list-item-text">
         <span>{{item.name}}</span>
         <span>{{item.resume}}</span>
         <span>{{item.street}}</span>
         <p>lat: {{item.lat}}, lng:{{item.lng}}</p>
       </div>
-
-      <md-button @click="setPosition(item)" class="md-icon-button md-list-action">
+      <md-button class="md-icon-button md-list-action">
         <md-icon class="md-primary">location_on</md-icon>
       </md-button>
-
     </md-list-item>
   </md-list>
 </section>

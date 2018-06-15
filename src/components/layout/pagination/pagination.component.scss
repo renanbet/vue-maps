@@ -1,0 +1,22 @@
+.pagination {
+  text-align: right;
+  color: rgba(0,0,0,.54);
+  
+  .pages {
+    display: inline-block;
+    width: 400px;
+
+    .pageinfo {
+      float:left;
+      margin: 10px 15px;
+    }
+    
+    .menu {
+      width: 50px;
+      margin: 0 0 0;
+      float: left;
+      min-height: 0;
+      padding-top: 4px;
+    }
+  }
+}

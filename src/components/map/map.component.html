@@ -1,15 +1,15 @@
 
 <section class="map">
   <GmapMap
-    v-bind:center="center"
-    v-bind:zoom="zoom"
+    :center="center"
+    :zoom="zoom"
     style="height: 400px"
     >
     <GmapMarker
-      v-bind:key="index"
+      :key="index"
       v-for="(m, index) in markers"
-      v-bind:position="m.position"
-      v-bind:clickable="true"
+      :position="m.position"
+      :clickable="true"
       @click="showLocation(m)"
     />
   </GmapMap>

@@ -1,0 +1,22 @@
+
+<div class="pagination">
+  <div class="pages">
+    <div>
+      <div class="pageinfo">Página</div>
+      <md-field class="menu">
+        <md-select v-model="currentPage">
+          <md-option v-for="item in pages" :key="item" :value="item">{{item}}</md-option>
+        </md-select>
+      </md-field>
+    </div>
+    <div>
+      <div class="pageinfo">{{pageContentStart}} - {{pageContentFinish}} de {{total}}</div>
+      <md-button @click="previousPage" :disabled="page == 1" class="md-icon-button">
+        <md-icon>keyboard_arrow_left</md-icon>
+      </md-button>
+      <md-button @click="nextPage" :disabled="totalPages == page" class="md-icon-button">
+        <md-icon>keyboard_arrow_right</md-icon>
+      </md-button>
+    </div>
+  </div>
+</div>
